@@ -15,6 +15,10 @@ if [[ -z "$DEVICE_NAME" ]]; then
   DEVICE_NAME=$(printf "balenaSound Spotify %s" $(hostname | cut -c -4))
 fi
 
+if [[ "$BLUETOOTH_DEVICE_NAME" ]]; then
+  DEVICE_NAME="$BLUETOOTH_DEVICE_NAME"
+fi
+
 # Set the system volume here
 SYSTEM_OUTPUT_VOLUME="${SYSTEM_OUTPUT_VOLUME:-75}"
 
